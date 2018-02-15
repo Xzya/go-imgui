@@ -1,10 +1,10 @@
 package main
 
 import (
-	"github.com/Xzya/go-bindings-test/imgui"
+	"github.com/Xzya/go-imgui/imgui"
 	"fmt"
 )
 
 func main() {
-	fmt.Println(imgui.ImVec2{})
+	fmt.Println(imgui.Vec2{})
 }

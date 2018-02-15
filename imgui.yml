@@ -3,7 +3,7 @@ GENERATOR:
   PackageName: imgui
   PackageDescription:
   PackageLicense:
-  Includes: ["cimgui/cimgui.h"]
+  Includes: ["cimgui/cimgui/cimgui.h"]
   Options:
     SafeStrings: true
 

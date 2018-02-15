@@ -1,7 +1,7 @@
 package imgui
 
 /*
-#include "cimgui.h"
+#include "cimgui/cimgui/cimgui.h"
 */
 import "C"
 
