@@ -1,0 +1,131 @@
+---
+GENERATOR:
+  PackageName: imgui
+  PackageDescription:
+  PackageLicense:
+  Includes: ["cimgui/cimgui.h"]
+  Options:
+    SafeStrings: true
+
+PARSER:
+  IncludePaths: ["/usr/local/include", "/usr/include", "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/", "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/8.0.0/include/"]
+  SourcesPaths: ["imgui/cimgui/cimgui/cimgui.h"]
+  Defines:
+    CIMGUI_DEFINE_ENUMS_AND_STRUCTS: 1
+
+TRANSLATOR:
+  ConstRules:
+    defines: expand
+    enum: expand
+
+  PtrTips:
+    struct:
+    function:
+      # callbacks
+      - {target: "ImGuiTextEditCallback", tips: [ref]}
+      - {target: "ImGuiSizeConstraintCallback", tips: [ref]}
+      - {target: "ImDrawCallback", tips: [ref, ref]}
+      # inline
+      - {target: "items_getter", tips: [ref,0,ref]}
+      - {target: "values_getter", tips: [ref,0]}
+      # others
+      - {target: "igShowDemoWindow", tips: [ref]}
+      - {target: "igShowMetricsWindow", tips: [ref]}
+      - {target: "igShowStyleEditor", tips: [ref]}
+      - {target: "igBegin", tips: [ref,ref,0]}
+      - {target: "igGetContentRegionMax", tips: [ref]}
+      - {target: "igGetContentRegionAvail", tips: [ref]}
+      - {target: "igGetWindowContentRegionMin", tips: [ref]}
+      - {target: "igGetWindowContentRegionMax", tips: [ref]}
+      - {target: "igGetWindowPos", tips: [ref]}
+      - {target: "igGetWindowSize", tips: [ref]}
+      - {target: "igSetStateStorage", tips: [ref]}
+      - {target: "igPushFont", tips: [ref]}
+      - {target: "igGetStyleColorVec4", tips: [ref,0]}
+      - {target: "igGetFontTexUvWhitePixel", tips: [ref]}
+      - {target: "igGetColorU32Vec", tips: [ref]}
+      - {target: "igDummy", tips: [ref]}
+      - {target: "igGetCursorPos", tips: [ref]}
+      - {target: "igGetCursorStartPos", tips: [ref]}
+      - {target: "igGetCursorScreenPos", tips: [ref]}
+      - {target: "igCheckbox", tips: [ref, ref]}
+      - {target: "igRadioButton", tips: [ref,ref,0]}
+      - {target: "igPlotLines2", tips: [ref,ref,ref,0,0,ref,0,0,0]}
+      - {target: "igPlotLines", tips: [ref,ref,0,0,ref,0,0,0,0]}
+      - {target: "igPlotHistogram2", tips: [ref,ref,ref,0,0,ref,0,0,0]}
+      - {target: "igPlotHistogram", tips: [ref,ref,0,0,ref0,0,0,0]}
+      - {target: "igProgressBar", tips: [0,ref,ref]}
+      - {target: "igCombo", tips: [ref,ref,arr,0,0]}
+      - {target: "igCombo2", tips: [ref,ref,ref,0]}
+      - {target: "igCombo3", tips: [ref,ref,ref,ref,0,0]}
+      - {target: "igDragFloatRange2", tips: [ref,ref,ref,0,0,0,ref,ref,0]}
+      - {target: "igDragFloat2", tips: [ref,0,0,0,0,ref,0]}
+      - {target: "igDragFloat3", tips: [ref,0,0,0,0,ref,0]}
+      - {target: "igDragFloat4", tips: [ref,0,0,0,0,ref,0]}
+      - {target: "igDragFloat", tips: [ref,ref,0,0,0,ref,0]}
+      - {target: "igDragIntRange2", tips: [ref,ref,ref,0,0,0,ref,ref]}
+      - {target: "igDragInt2", tips: [ref,ref,0,0,0,ref]}
+      - {target: "igDragInt3", tips: [ref,ref,0,0,0,ref]}
+      - {target: "igDragInt4", tips: [ref,ref,0,0,0,ref]}
+      - {target: "igDragInt", tips: [ref,ref,0,0,0,ref]}
+      - {target: "igInputTextMultiline", tips: [ref,ref,0,0,0,ref,ref]}
+      - {target: "igInputText", tips: [ref,ref,0,0,ref,ref]}
+      - {target: "igInputFloat2", tips: [ref,ref,0,0]}
+      - {target: "igInputFloat3", tips: [ref,ref,0,0]}
+      - {target: "igInputFloat4", tips: [ref,ref,0,0]}
+      - {target: "igInputFloat", tips: [ref,ref,0,0,0,0]}
+      - {target: "igInputInt2", tips: [ref,ref,0]}
+      - {target: "igInputInt3", tips: [ref,ref,0]}
+      - {target: "igInputInt4", tips: [ref,ref,0]}
+      - {target: "igInputInt", tips: [ref,ref,0,0,0]}
+      - {target: "igSliderFloat2", tips: [ref,ref,0,0,ref,0]}
+      - {target: "igSliderFloat3", tips: [ref,ref,0,0,ref,0]}
+      - {target: "igSliderFloat4", tips: [ref,ref,0,0,ref,0]}
+      - {target: "igSliderFloat", tips: [ref,ref,0,0,ref,0]}
+      - {target: "igSliderAngle", tips: [ref,ref,0,0]}
+      - {target: "igSliderInt2", tips: [ref,ref,0,0,ref]}
+      - {target: "igSliderInt3", tips: [ref,ref,0,0,ref]}
+      - {target: "igSliderInt4", tips: [ref,ref,0,0,ref]}
+      - {target: "igSliderInt", tips: [ref,ref,0,0,ref]}
+      - {target: "igVSliderFloat", tips: [ref,0,ref,0,0,ref,0]}
+      - {target: "igVSliderInt", tips: [ref,0,ref,0,0,ref]}
+
+  Rules:
+    global:
+      - {action: accept, from: '(?i)^ig'}
+      - {action: accept, from: '(?i)^im'}
+      - {action: replace, from: '^ImGui', to: ''}
+      - {action: replace, from: '^Im', to: ''}
+      - {action: replace, from: '^ig', to: ''}
+      - {transform: export}
+    function:
+      - {action: ignore, from: 'igCreateContext'} # func pointer
+      - {action: ignore, from: 'igPlotLines2'} # func pointer
+      - {action: ignore, from: 'igPlotHistogram2'} # func pointer
+      - {action: ignore, from: 'igCombo3'} # func pointer
+      - {action: ignore, from: 'igListBox2'} # func pointer
+      - {action: ignore, from: 'igText'} # variadic
+      - {action: ignore, from: 'igTextColored'} # variadic
+      - {action: ignore, from: 'igTextDisabled'} # variadic
+      - {action: ignore, from: 'igTextWrapped'} # variadic
+      - {action: ignore, from: 'igLabelText'} # variadic
+      - {action: ignore, from: 'igBulletText'} # variadic
+      - {action: ignore, from: 'igTreeNodeStr'} # variadic
+      - {action: ignore, from: 'igTreeNodePtr'} # variadic
+      - {action: ignore, from: 'igTreeNodeExStr'} # variadic
+      - {action: ignore, from: 'igTreeNodeExPtr'} # variadic
+      - {action: ignore, from: 'igSetTooltip'} # variadic
+      - {action: ignore, from: 'igLogText'} # variadic
+      - {action: ignore, from: 'ImGuiTextBuffer_appendf'} # variadic
+    type:
+      - {action: ignore, from: 'ImGuiHoveredFlags'}
+      - {action: ignore, from: 'ImGuiComboFlags'}
+      - {action: ignore, from: 'ImGuiDragDropFlags'}
+      - {action: ignore, from: 'ImGuiFocusedFlags'}
+      - {action: ignore, from: 'ImDrawCornerFlags'}
+      - {action: ignore, from: 'ImDrawListFlags'}
+    private:
+      - {transform: unexport}
+    post-global:
+      - {action: replace, from: _$}
+      - {load: snakecase}
